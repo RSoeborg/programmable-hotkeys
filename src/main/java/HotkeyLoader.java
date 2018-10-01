@@ -1,7 +1,5 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +20,7 @@ public class HotkeyLoader {
     private void loadMap(String path) throws IOException {
         File f = new File(path);
         if(f.exists() && !f.isDirectory()) {
-            BufferedReader in = new BufferedReader(new FileReader(path));
+            BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8));
 
             String line;
             while ((line = in.readLine()) != null) {
