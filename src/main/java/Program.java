@@ -12,5 +12,6 @@ public class Program {
         provider.register(KeyStroke.getKeyStroke("shift A"), hotKey -> {
             hotkeyWindow.show();
         });
+        System.out.println("[PHK]: Running");
     }
 }
